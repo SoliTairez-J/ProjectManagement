@@ -12,4 +12,11 @@ router.get('/', function(req, res, next) {
   });
 });
 
+router.get('/details/:id', function(req, res, next) {
+  var projects = db.get('Projects');
+  projects.find(req.params.id,{},function(err,project){
+    res.render('details', { projects: project });
+  });
+});
+
 module.exports = router;

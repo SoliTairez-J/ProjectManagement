@@ -14,17 +14,17 @@
     <% projects.forEach(function(project){ %>
         <div class="col-lg-4 col-md-6 mb-4">
           <div class="card h-100">
-            <a href="#"></a><img class="card-img-top" src=" <%- project.image %> " alt="">
+            <a href="/details/<%= project._id %>"><img class="card-img-top" src=" /images/<%- project.image %> " alt=""></a>
             <div class="card-body">
               <h4 class="card-title">
-                ชื่อ: <a href="#"> <%= project.name %> </a>
+                ชื่อ: <a href="/details/<%= project._id %>"> <%= project.name %> </a>
               </h4>
               <h6>วันสร้างโปรเจค : <%= project.date %> </h6>
-              <p class="card-text"> <%= project.description %> </p>
+              <p class="card-text"> <%= descriptionText(project.description,70) %> </p>
             </div>
             <div class="card-footer">
               <small class="text-muted">
-                <a href="#">See More</a>
+                <a href="/details/<%= project._id %>">See More</a>
               </small>
             </div>
           </div>
